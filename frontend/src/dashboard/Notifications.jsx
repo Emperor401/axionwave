@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  FiBell, FiPackage, FiTruck, FiCheckCircle,
+  FiBell, FiCheckCircle,
   FiAlertCircle, FiInfo, FiTrash2
 } from 'react-icons/fi';
 import DashboardLayout from '../components/DashboardLayout';
@@ -104,10 +104,7 @@ const Notifications = () => {
           </p>
         </div>
         {unreadCount > 0 && (
-          <button
-            onClick={markAllRead}
-            className="btn-outline py-2 px-4 text-sm"
-          >
+          <button onClick={markAllRead} className="btn-outline py-2 px-4 text-sm">
             Mark all as read
           </button>
         )}

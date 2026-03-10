@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiPackage, FiSearch, FiFilter, FiAlertCircle, FiEye } from 'react-icons/fi';
+import { FiSearch, FiFilter, FiAlertCircle, FiEye } from 'react-icons/fi';
 import DashboardLayout from '../components/DashboardLayout';
 import { getMyShipments } from '../utils/api';
 import { Link } from 'react-router-dom';
@@ -70,7 +70,6 @@ const MyShipments = () => {
         className="card mb-6"
       >
         <div className="flex flex-col md:flex-row gap-4">
-          {/* Search */}
           <div className="relative flex-1">
             <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
@@ -81,8 +80,6 @@ const MyShipments = () => {
               className="input-field pl-11"
             />
           </div>
-
-          {/* Status Filter */}
           <div className="relative">
             <FiFilter className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
             <select

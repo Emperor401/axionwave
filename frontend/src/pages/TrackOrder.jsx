@@ -6,14 +6,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import toast from 'react-hot-toast';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' },
-  }),
-};
-
 const TrackOrder = () => {
   const [trackingId, setTrackingId] = useState('');
   const [shipment, setShipment] = useState(null);
@@ -65,7 +57,6 @@ const TrackOrder = () => {
 
       {/* Hero */}
       <section className="pt-32 pb-24 relative overflow-hidden min-h-96">
-        {/* Background Image */}
         <div
           className="absolute inset-0"
           style={{
@@ -75,12 +66,10 @@ const TrackOrder = () => {
             backgroundAttachment: 'fixed',
           }}
         />
-        {/* Overlay */}
         <div
           className="absolute inset-0"
           style={{ background: 'linear-gradient(135deg, rgba(10,25,55,0.93) 0%, rgba(20,60,160,0.87) 100%)' }}
         />
-        {/* Blur Orbs */}
         <div className="absolute top-20 right-10 w-64 h-64 bg-blue-500 rounded-full opacity-10 blur-3xl" />
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-300 rounded-full opacity-10 blur-3xl" />
 
@@ -101,7 +90,6 @@ const TrackOrder = () => {
               Enter your tracking number to get real-time updates on your shipment location and delivery status.
             </p>
 
-            {/* Track Form */}
             <div className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
               <div className="relative flex-1">
                 <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
@@ -127,7 +115,6 @@ const TrackOrder = () => {
               </button>
             </div>
 
-            {/* Sample Tracking Info */}
             <p className="text-blue-300 text-xs mt-4 opacity-70">
               Example: AXW-XXXXXXXX — Find your tracking number in your shipment confirmation email
             </p>
@@ -176,7 +163,11 @@ const TrackOrder = () => {
                   <div className="mt-4 flex items-center gap-2 bg-blue-50 rounded-xl px-4 py-3 text-sm">
                     <FiClock className="text-blue-600" />
                     <span className="text-gray-600">Estimated Delivery:</span>
-                    <strong className="text-gray-900">{new Date(shipment.estimatedDelivery).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</strong>
+                    <strong className="text-gray-900">
+                      {new Date(shipment.estimatedDelivery).toLocaleDateString('en-US', {
+                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                      })}
+                    </strong>
                   </div>
                 )}
               </div>
@@ -209,7 +200,6 @@ const TrackOrder = () => {
                       );
                     })}
                   </div>
-                  {/* Progress Bar */}
                   <div className="absolute top-5 left-5 right-5 h-0.5 bg-gray-200" style={{ zIndex: 0 }}>
                     <motion.div
                       initial={{ width: 0 }}
